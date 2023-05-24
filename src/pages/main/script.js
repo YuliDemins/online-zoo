@@ -1,36 +1,11 @@
 window.addEventListener('DOMContentLoaded', ()=> {
-
-    // --- Burger-menu ---
-  
-    const menu = document.querySelector('.burger-menu');
-    const Container = document.querySelector('.container');
-    const Burger = document.querySelector('.menu__burger');
-    const menuClose = document.querySelector('.menu__close');
-  
-    menu.addEventListener ('click', () => {
-        Container.classList.add('_open')
-        Burger.classList.add('_open')
-    })
-  
-    menuClose.addEventListener('click',() => {
-        Container.classList.remove('_open')
-        Burger.classList.remove('_open')
-    })
-  
-    Container.addEventListener('click',(e) => {
-        if (e.target == Container) {
-            Burger.classList.remove('_open')
-            Container.classList.remove('_open')
-        }
-    })
-  
+ 
     //---Pop up---
 
     const Comments = document.querySelectorAll('.comments__card-container')
     const Popup = document.querySelector('.popup')
     const Card = document.querySelector('.popup__card')
     const PopupClose = document.querySelector('.popup__close');
-  
   
     Comments.forEach ((item) => {
         item.addEventListener('click', ()=> {
@@ -99,7 +74,6 @@ window.addEventListener('DOMContentLoaded', ()=> {
         Pets.append(nextContainer)
     }
   
-  
     function prevSlide () {
         let Cards = getSlides()
         let prevContainer = document.createElement('div')
@@ -143,8 +117,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
   
     Prev.addEventListener('click', moveRight)
   
-  
-    window.addEventListener("resize", (e) => {
+    window.addEventListener("resize", () => {
         Comments[0].style.marginLeft =`0px`
         width = Comments[0].clientWidth
         SliderWidth = Pets.clientWidth;
